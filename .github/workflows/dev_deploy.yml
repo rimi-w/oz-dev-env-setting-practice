@@ -27,8 +27,8 @@ jobs:
 
       - name: S3 기존 파일들 전체 삭제 및 새로운 빌드 파일 업로드
         run: |
-          aws s3 rm --recursive s3://practice-cloudfront-01
-          aws s3 cp ./dist s3://practice-cloudfront-01/ --recursive
+          aws s3 rm --recursive s3://dev-practice.aws
+          aws s3 cp ./dist s3://dev-practice.aws/ --recursive
 
       - name: CloudFront 캐시 무효화
         run: aws cloudfront create-invalidation --distribution-id EC6HX468SNJAW --paths "/*"
